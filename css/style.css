@@ -1,0 +1,658 @@
+/* || General styles */
+
+:root {
+	--primary: #b4e7ff;
+	--secondary: #ade6d8;
+	--complementary: #ffccb4;
+	--analagous: #b4fff1;
+	--logo_color: #02A1F4;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	margin: 0 auto;
+	max-width: 1600px;
+	font-size: 1em;
+}
+
+h1 {
+	font-size: 1.8em
+}
+
+h2 {
+	font-size: 1.5em
+}
+
+h3 {
+	font-size: 1.2em
+}
+
+p {
+	font-size: .75em;
+}
+
+button,
+label,
+a{
+	cursor: pointer;
+}
+
+
+/* || Typography */
+
+.heading-jumbo {
+	margin: 0;
+	position: static;
+}
+
+.paragraph-bigger {
+	display: block;
+	/*margin-bottom: 10px;*/
+	position: static;
+	font-weight: normal;
+	word-wrap: break-word;
+	max-width: 350px;
+
+}
+
+.work-heading {
+	margin: 12px auto;
+}
+
+.article-width{
+	margin: 0 auto;
+	max-width: 75ch;
+}
+/* || Header and Main Navigation */
+
+.navigation-header {
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	position: sticky;
+	align-items: center;
+	justify-content: space-between;
+	top: 0;
+	z-index: 1000;
+	background: white;
+	border-bottom: var(--primary) 2px solid;
+}
+
+
+.hide {
+	display: none;
+}
+
+.navigation-footer {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: white;
+	border-top: var(--primary) 2px solid;
+	margin-top: 3em;
+	margin-bottom: 20px;
+}
+
+.footer-box {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.footer-box:first-child > span {
+	margin-right: auto;
+}
+
+.footer-box:last-child > span {
+	margin-left: auto;
+}
+
+
+.logo-image {
+	height: 40px;
+	width: auto;
+	padding: 1em;
+}
+
+ul {
+	padding: 0;
+	margin: 9px 20px;
+	align-self: center;
+}
+
+li {
+	display: inline;
+	float: right;
+}
+
+li a {
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: clamp(.75em, 2.5vw, 1em);
+	cursor: pointer;
+}
+
+li a:hover {
+	color: lightblue;
+}
+
+
+.no-dropdown-navigation {
+	display: none;
+}
+
+.dropdown-navigation {
+	display: block;
+}
+
+/* Dropdown Button */
+.dropdown-button {
+	background-color: var(--logo_color);
+
+	color: white;
+	font-weight: bold;
+	margin: 14px 16px;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropdown-button:hover, .dropdown-button:focus {
+	background-color: #2980B9;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	right: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: black;
+	padding-left: 12px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #ddd
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+	display: block;
+}
+
+.fab {
+	color: var(--logo_color);
+}
+
+/* Add a hover effect if you want */
+.fab:hover {
+	opacity: 0.7;
+}
+
+/* || unspecified*/
+.section {
+	margin: 0 auto;
+	position: static;
+	width: auto;
+	height: auto;
+	padding: 0;
+}
+
+.content-image-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 1 1 0;
+
+}
+
+.intro-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: static;
+	align-self: center;
+	margin-bottom: 30px;
+	margin-right: 10px;
+	margin-left: 10px;
+	text-align: center;
+
+}
+/*  ==========
+	INTRO STYLING CSS
+	========== */
+
+.intro-header {
+	align-items: center;
+	justify-content: center;
+	display: block;
+	position: static;
+	background-color: var(--primary);
+}
+
+.intro-header-round-bottom{
+	border-radius: 0 0 10px 10px;
+}
+
+.intro-header-round-all{
+	border-radius: 10px;
+}
+
+.intro-text {
+	display: block;
+	margin: 35px auto;
+	width: 80%;
+	position: static;
+}
+
+.intro-text-flex{
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+}
+
+
+/*  ==========
+	INSTRUCTION STYLING
+	========== */
+.work-heading-wrapper {
+	margin-bottom: 30px;
+	margin-top: 30px;
+	display: block;
+	text-align: center;
+}
+
+.collection-list-wrapper {
+	display: block;
+	margin-bottom: 20px;
+	width: auto;
+	height: auto;
+	position: static;
+}
+
+.collection-wrap {
+	display: flex;
+	flex-direction: column;
+}
+
+.instruction-wrap {
+	flex-shrink: initial;
+	display: block;
+	margin: 0 auto;
+	width: 85%;
+}
+
+.instruction-title {
+	font-weight: bold;
+	text-align: center;
+}
+
+.instruction-description {
+	text-align: center;
+	font-weight: bolder;
+}
+
+/*  ==========
+	TESTIMONIAL SECTION CSS
+	========== */
+
+.testimonial {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-style: italic;
+	font-weight: bolder;
+}
+
+.testimonial-credit {
+	text-align: center;
+	font-weight: bold;
+}
+
+.customer-info {
+	text-align: center;
+	margin: auto;
+}
+
+
+/*  ==========
+	NEW ORDER CSS
+	========== */
+
+
+.order-wrapper {
+	text-align: center;
+	padding: 20px 50px 50px;
+}
+
+
+.order-heading-wrap {
+	text-align: center;
+}
+
+#order-header-pt1,
+#order-header-pt3 {
+	font-weight: normal;
+	margin: .5em;
+}
+
+#order-header-pt2 {
+	font-weight: bold;
+	margin: .5em;
+}
+
+.order-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.order-form-inner-wrapper {
+	justify-content: center;
+	padding: 2em;
+}
+
+.input-wrapper {
+	width: 100%;
+}
+
+/*centers the text field bc they were shifted with border radius*/
+#order-name,
+#order-email,
+#other-information {
+	margin-left: -9px;
+}
+
+.label {
+	margin-bottom: 25px;
+}
+
+.text-field {
+	width: 100%;
+	display: block;
+	padding: 12px 8px;
+	margin-bottom: 25px;
+	font-size: 14px;
+	border-width: 2px;
+	border-radius: 10px;
+	border-color: #e4e4e4;
+	outline: none;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.text-field.is-invalid {
+	border-color: #d9534f;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23d9534f' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center right calc(.35em + 6px);
+	background-size: calc(.7em + 12px) calc(.7em + 12px);
+}
+
+.preview-image {
+	max-width: 150px;
+	height: auto;
+}
+
+.image-upload-button,
+input[type="file"] {
+	text-align: center;
+	background-color: gray;
+	color: white;
+	width: 30%;
+	display: block;
+	padding: 16px 35px;
+	font-weight: bold;
+	font-size: 1rem;
+	border-radius: 10px;
+	outline: none;
+	margin: 20px auto;
+}
+
+.image-upload-button:focus + label,
+.image-upload-button:hover + label,
+.image-upload-button:active + label {
+	box-shadow: 0 0 0 5px rgba(21, 156, 228, 0.4);
+}
+
+.image-upload-button-invalid {
+	border-color: #d9534f;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23d9534f' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center right calc(.35em + 6px);
+	background-size: calc(.7em + 12px) calc(.7em + 12px);
+}
+
+#pay {
+	margin: 20px auto 0 0;
+	width: 150px;
+}
+
+/*input[type="file"] {*/
+/*	display: none;*/
+/*}*/
+
+
+.grid-container {
+	display: grid;
+	grid-row-gap: 50px;
+	grid-column-gap: 100px;
+	padding-left: 0;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-auto-rows: 1fr;
+	border-radius: 5px;
+}
+
+@media screen and (max-width: 399px){
+	.grid-container{
+		grid-template-columns: none;
+	}
+
+}
+
+.grid-child {
+	outline: #222222 2px solid;
+	margin: auto auto;
+	column-fill: auto;
+
+}
+
+/*  ==========
+	Components
+	========== */
+
+.button {
+	display: block;
+	padding: 16px clamp(5px, 20px, 35px);
+	font-weight: bold;
+	font-size: 1rem;
+	border-radius: 10px;
+	outline: none;
+	margin: 20px auto;
+	cursor: pointer;
+
+
+}
+
+
+
+.button:hover,
+.button:focus {
+	box-shadow: 0 0 0 5px rgba(21, 156, 228, 0.4);
+}
+
+.blue {
+	background-color: var(--secondary);
+	color: black;
+}
+
+.button-on-primary{
+	background-color: var(--complementary);
+	color: black;
+}
+
+
+
+.image-box {
+	display: grid;
+	height: 100%;
+}
+
+.center-fit{
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+}
+
+.full-image {
+	width: clamp(60%, 70%, 70%);
+	height: auto;
+	margin: 0 auto;
+	padding: 40px;
+	border-radius: 70px;
+}
+
+.outline {
+	outline: #222222 1px solid;
+}
+
+.instruction-img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 120px;
+	height: auto;
+}
+
+.rendition-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+	transition: 0.3s;
+	border: lightblue 1px solid;
+	text-align: center;
+}
+
+
+/* On mouse-over, add a deeper shadow */
+.rendition-card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+
+	width: clamp(30%, 70%, 70%);
+	height: auto;
+
+	margin: 10px auto auto auto;
+}
+
+.rendition-description-wrapper {
+	border-top: lightblue 1px solid;
+}
+
+.rendition-description {
+	align-self: flex-end;
+	text-align: center;
+	margin: 10px auto;
+}
+
+.rendition-grid-title {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.upload-file-ok {
+	border: 3px solid green;
+}
+
+.upload-file-warning {
+	border: 3px solid red;
+}
+
+
+.image-upload-wrapper--label {
+	background: var(--complementary);
+	text-align: center;
+	display: block;
+	padding: 16px clamp(5px, 20px, 35px);
+	font-weight: bold;
+	font-size: 1rem;
+	border-radius: 10px;
+	outline: none;
+	margin: 20px auto 0;
+	border: 2px solid black;
+	max-width: 150px;
+}
+
+.image-upload-wrapper--label-left {
+	background: var(--complementary);
+	text-align: center;
+	display: block;
+	padding: 16px clamp(5px, 20px, 35px);
+	font-weight: bold;
+	font-size: 1rem;
+	border-radius: 10px;
+	outline: none;
+	margin: 20px auto 0 0 ;
+	border: 2px solid black;
+	max-width: 150px;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+#section2button,
+#section3button{
+	margin: 50px auto;
+}
+
+.artist-information-grid{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+
+#original-image{
+	margin: 0 auto;
+}
+
+.temp-download{
+	width: 100%;
+}
+
+

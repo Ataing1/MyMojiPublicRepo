@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Order</title>
+    <%- include('../partials/head'); %>
+
+</head>
+<body>
+<%- include('../partials/header'); %>
+<section class="section">
+
+    <div class="intro-header intro-header-round-bottom">
+        <div class="content-image-wrapper">
+            <div></div>
+            <div class="customer-info">
+                <h3 class="paragraph-bigger">Name: <%= item.name %></h3>
+                <h3 class=paragraph-bigger>ID: <%= item.customer_id %></h3>
+                <h3 class="paragraph-bigger">Notes: <%- item.notes === "" ? "N/A" : item.notes %></h3>
+            </div>
+            <img class="full-image image-no-margin" src="<%= originalURL %>" alt="icon"/>
+            <div class="intro-content" id="artist-upload-container">
+                <!--            intro text -->
+                <div class="intro-text-flex">
+
+                    <h3 class="paragraph-bigger">Select Emoji</h3>
+                    <img class="preview-image" src="#" id="blah" alt="">
+
+                    <label for="image-upload" class="image-upload-wrapper--label">Select File</label>
+                    <input type="file" name="upload" id="image-upload"
+                           accept="image/*"
+                           placeholder="Select File" required
+                           onchange="return validateFileUpload()">
+
+
+                    <button class="button blue" id="upload-rendition">Upload</button>
+
+
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+</section>
+<div class="work-heading-wrapper">
+    <h2 class="work-heading">Renditions</h2>
+</div>
+<section class="section">
+    <% if (item.renditions.length > 0){ %>
+        <div class="grid-container">
+            <% renditionArray.forEach(function(rendition) { %>
+                <div class="rendition-card">
+                    <!--            change to grid layout and share space evenly between the two-->
+                    <img class="card-image" src="<%= rendition.url %>"  alt="icon">
+                    <div class="rendition-description-wrapper">
+                        <p class="rendition-description">Feedback: <%= rendition.feedback %></p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% }else{ %>
+        <p class="paragraph-bigger" style="text-align: center">Upload your first Emoji</p>
+    <% } %>
+</section>
+<%- include('../partials/footer'); %>
+
+<script charset="UTF-8">
+
+	let uploadButton = document.getElementById('upload-rendition');
+
+	uploadButton.addEventListener('click', async function (e) {
+		if (!validateFileUpload()) {
+			console.log("input invalid returning");
+			return;
+		} else {
+			console.log('input valid continuing to fetch');
+		}
+		e.preventDefault();
+
+		let formData = new FormData();
+		let fuData = document.getElementById('image-upload');
+
+		const imageFile = fuData.files[0];
+
+		const options = {
+			maxSizeMB: 1,
+			maxWidthOrHeight: 1920,
+			useWebWorker: true
+		}
+		try {
+			const compressedFile = await imageCompression(imageFile, options);
+			formData.append("upload", compressedFile);
+		} catch (error) {
+			console.log(error);
+		}
+		//same as customer_id same as uuid
+		fetch('/rendition/' + '<%- item.customer_id %>', {
+			method: 'POST',
+			body: formData
+		})
+			.then(function (response) {
+				console.log(response);
+				location.href='/artistView/' + '<%- item.customer_id %>';
+				return response.json();
+			})
+			.catch(function (error) {
+				console.error('Error:', error);
+				alert("OOPS! Something went wrong");
+			});
+	});
+
+
+</script>
+<%- include('../partials/scripts');%>
+</body>
+</html>

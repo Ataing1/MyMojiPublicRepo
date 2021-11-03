@@ -1,0 +1,189 @@
+@media screen and (min-width: 46.25em) {
+	.grid-container {
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	#original-image {
+		max-width: 30%;
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	.card-image{
+		max-width: 40%;
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	.image-no-margin{
+		max-width: 40%;
+	}
+
+	.order-form-inner-wrapper{
+		margin: 0 auto;
+	}
+
+	.input-wrapper{
+		width: clamp(40ch, 100%, 75ch);
+		margin: 0 auto;
+	}
+
+	.image-upload-label{
+		margin: 20px 0;
+	}
+	.pay-button{
+		margin: 20px 0;
+	}
+
+	.no-dropdown-navigation {
+		display: inherit;
+	}
+
+	.dropdown-navigation {
+		display: none;
+	}
+
+
+}
+
+
+@media screen and (min-width: 56.25em) {
+
+	/*  ==========
+	Typography
+	========== */
+	h1 {
+		font-size: 2em
+	}
+
+	h2 {
+		font-size: 1.75em
+	}
+
+	h3 {
+		font-size: 1.5em
+	}
+
+
+
+	/*  ==========
+		Layout
+		========== */
+	.section {
+		max-width: 1600px;
+		margin: 0 auto;
+	}
+
+	/*  ==========
+	INTRO STYLING CSS
+	========== */
+	.intro-content {
+		text-align: left;
+		margin-left: 30px;
+	}
+
+	.customer-info{
+		text-align: left;
+		margin: auto 0;
+		padding: 10px;
+		border-top: var(--logo_color) 2px solid;
+		border-bottom: var(--logo_color) 2px solid;
+	}
+
+	#artist-upload-container{
+		margin: auto 0;
+		padding: 10px;
+		border-top: var(--logo_color) 2px solid;
+		border-bottom: var(--logo_color) 2px solid;
+	}
+
+
+	#section1button ,
+	#change-mugshot-button{
+		margin: 20px 0 auto;
+	}
+
+	.content-image-wrapper {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.work-heading-wrapper{
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
+	/*  ==========
+	INSTRUCTION STYLING
+	========== */
+	.instruction-wrap {
+		max-width: 30%;
+	}
+
+	/*  ==========
+	INSTRUCTION STYLING
+	========== */
+	.collection-wrap {
+		flex-direction: row;
+		gap: 2.5em;
+		margin: 0 2.5em;
+	}
+
+	/*  ==========
+	NEW ORDER CSS
+	========== */
+	.order-wrapper {
+		text-align: left;
+	}
+
+
+
+
+
+	/*  ==========
+	Components
+	========== */
+	.full-image {
+		width: clamp(40%, 45%, 50%);
+
+	}
+
+	.image-no-margin{
+		max-width: 35%;
+		margin: 0;
+	}
+
+
+
+
+
+}
+
+@media screen and (min-width: 67.4275em) {
+
+	/*  ==========
+	Typography
+	========== */
+	p {
+		font-size: 1em;
+	}
+
+
+	#intro-line-1,
+	#intro-line-2 {
+		font-size: 2.3em;
+	}
+
+	.navigation-footer{
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	#order-closeup{
+		max-width: 30%;
+	}
+
+
+}
+

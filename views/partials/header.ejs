@@ -1,0 +1,30 @@
+<nav class="navigation-header">
+
+    <% if ((typeof active != 'undefined' ? active : 'default') === '') { %>
+        <img class="logo-image" src="../../img/Logo@2x.png" alt="LOGO"/>
+    <% } else{ %>
+        <a href="/" class="logo">
+            <img class="logo-image" src="../../img/Logo@2x.png" alt="LOGO"/>
+        </a>
+    <% } %>
+    <div class="no-dropdown-navigation">
+        <ul>
+            <li><a href="#" onclick="location.href='/aboutView';">About Us</a></li>
+            <li><a href="#" onclick="location.href='/contactView';">Contact</a></li>
+        </ul>
+    </div>
+    <div class="dropdown-navigation">
+        <div class="dropdown">
+            <button  onclick="showDropDown()"  class="dropdown-button">Menu</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#" onclick="location.href='/aboutView';">About Us</a>
+                <a href="#" onclick="location.href='/contactView';">Contact</a>
+            </div>
+        </div>
+    </div>
+
+
+</nav>
+
+
+

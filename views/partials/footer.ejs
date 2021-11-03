@@ -1,0 +1,25 @@
+<nav class="navigation-footer">
+    <div class="footer-box">
+        <span>
+            <% if ((typeof active != 'undefined' ? active : 'default') === '') { %>
+                <img class="logo-image" src="../../img/Logo@2x.png" alt="LOGO"/>
+            <% } else{ %>
+                <a href="/" class="logo">
+            <img class="logo-image" src="../../img/Logo@2x.png" alt="LOGO"/>
+        </a>
+            <% } %>
+        </span>
+    </div>
+    <div class="footer-box">
+        <ul>
+            <li><a href="#" onclick="location.href='/contactView';">Contact</a></li>
+            <li><a href="#" onclick="location.href='/privacyView';">Privacy</a></li>
+            <li><a href="#" onclick="location.href='/termsView';">Terms</a></li>
+        </ul>
+    </div>
+    <div class="footer-box">
+        <span>
+              <i class="fab fa-facebook-f fa-3x" onclick="location.href='https://www.facebook.com/TeamCartoon';"></i>
+        </span>
+    </div>
+</nav>
